@@ -1,0 +1,102 @@
+/* Общие стили */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background: #000 url("/Lab4/resoures/stars.jpg") no-repeat center;
+	background-size: cover;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+
+.header {
+	text-align: center;
+	padding: 20px;
+}
+
+/* Контейнер для всех элементов */
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Основной блок */
+.main-block {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	background: linear-gradient(to bottom, #2e2e2e, #4f4f4f);
+	border: 2px solid white;
+	border-radius: 8px;
+	text-align: center;
+	overflow: hidden;
+}
+
+/* Текст "Космос" */
+.header-div h1 {
+	margin: 0;
+	font-size: 48px;
+	color: white;
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* div2: Прямоугольник с одной скошенной стороной */
+.div2 {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 200px;
+	height: 100px;
+	background: linear-gradient(to right, #4682b4, #1e90ff);
+	clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%);
+	border: 2px solid white;
+	z-index: 1;
+}
+
+/* div3: Нижний прямоугольник */
+.div3 {
+	position: absolute;
+	top: 200px;
+	left: 100px;
+	width: 200px;
+	height: 100px;
+	background: radial-gradient(circle, #ff6347, #b22222);
+	border: 2px solid white;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	z-index: 1;
+}
+
+/* Карточки */
+.cards {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+	z-index: 2;
+}
+
+.card {
+	width: 80px;
+	height: 80px;
+	background: #4c4cff;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	border-radius: 5px;
+	transform: rotate(-10deg);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
