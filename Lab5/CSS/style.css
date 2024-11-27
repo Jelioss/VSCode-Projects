@@ -1,0 +1,98 @@
+/* Основные стили */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #0b0f1a; /* Космический темный фон */
+	color: #ffffff;
+}
+
+/* Блочная структура */
+header, nav, article, section, aside, footer {
+	border: 1px solid #ffffff;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* Шапка */
+header {
+	background: linear-gradient(90deg, #0d1b3c, #1f3b64);
+	text-align: center;
+	color: #f0db4f;
+}
+
+/* Навигация */
+nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: #1b2d4f;
+	padding: 10px;
+}
+
+nav a {
+	text-decoration: none;
+	color: #ffffff;
+	padding: 5px 10px;
+	transition: background-color 0.3s;
+}
+
+nav a:hover {
+	background-color: #f0db4f;
+	color: #1b2d4f;
+}
+
+/* Основное содержимое */
+article {
+	display: flex;
+	justify-content: space-between;
+}
+
+section {
+	flex: 3;
+	background-color: #16223a;
+}
+
+aside {
+	flex: 1;
+	background-color: #1f2e48;
+}
+
+/* Футер */
+footer {
+	text-align: center;
+	background: linear-gradient(90deg, #1f3b64, #0d1b3c);
+	color: #f0db4f;
+}
+
+/* Модальное окно */
+.modal {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #1f2e48;
+	color: #ffffff;
+	padding: 20px;
+	border: 2px solid #f0db4f;
+	z-index: 1000;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+	display: block;
+}
+
+.modal button {
+	margin-top: 10px;
+	padding: 5px 10px;
+	background-color: #f0db4f;
+	border: none;
+	cursor: pointer;
+	color: #1b2d4f;
+}
+
+.modal button:hover {
+	background-color: #1b2d4f;
+	color: #f0db4f;
+}
