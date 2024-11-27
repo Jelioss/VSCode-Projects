@@ -1,0 +1,101 @@
+/* Базовые стили */
+body {
+	margin: 20px;
+	font-size: 16px;
+}
+
+/* Применение нестандартных шрифтов к параграфам */
+#main-block > p:nth-of-type(1) {
+	font-family: 'Roboto Slab', serif;
+	font-size: 20px;
+}
+
+#main-block > p:nth-of-type(2) {
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+}
+
+#main-block > p:nth-of-type(3) {
+	font-family: 'Ruslan Display', cursive;
+	font-size: 20px;
+}
+
+#main-block > p:nth-of-type(4) {
+	font-family: 'Pacifico', cursive;
+	font-size: 20px;
+}
+
+#main-block > p:nth-of-type(5) {
+	font-family: 'Patrick Hand', cursive;
+	font-size: 20px;
+}
+
+#child-block > p:first-of-type {
+	font-family: 'Great Vibes', cursive;
+	font-size: 25px;
+}
+
+#child-block > p:last-of-type {
+	font-family: 'Neucha', cursive;
+	font-size: 25px;
+}
+
+/* Использование селектора прямых потомков */
+#main-block > p {
+	margin-bottom: 15px;
+}
+
+/* Использование селектора потомков */
+#main-block #child-block .child-image {
+	width: 250px;
+	height: auto;
+	margin-right: 20px;
+}
+
+/* Использование смежного селектора */
+p + p {
+	margin-top: 25px;
+}
+
+/* Использование общего селектора соседей */
+/*.child-image ~ .child-image {
+	border: 4px dashed rgb(64, 209, 7);
+}
+
+/* Использование псевдоклассов */
+#main-block > p:first-child {
+	font-weight: bold;
+}
+
+#main-block > p:last-child {
+	text-decoration: underline;
+}
+
+#main-block > p:nth-child(odd) {
+	background-color: #b9fdac;
+}
+
+#main-block > p:nth-child(even) {
+	background-color: #fdedb7;
+}
+
+#main-block > p:not(:first-child):not(:last-child) {
+	border-left: 5px solid orange;
+	padding-left: 10px;
+}
+
+button {
+	margin-top: 20px;
+	margin-right: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+/* Дополнительные стили для взаимодействия */
+.child-image {
+	transition: width 0.5s;
+}
+
+p {
+	transition: opacity 1s;
+}

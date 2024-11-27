@@ -1,0 +1,101 @@
+table {
+	width: 100vw;
+	height: 100vh; 
+   border-collapse: collapse;
+   margin: 0 auto; 
+}
+
+td {
+	border: 5px solid black;
+	text-align: left;
+	padding: 1px;
+}
+
+.blue {
+	background-color: rgba(48, 48, 247, 0.534);
+}
+
+.green {
+	background-color: rgba(6, 204, 6, 0.675);
+}
+
+.yellow {
+	background-color: rgba(255, 255, 0, 0.764);
+}
+
+.inline {
+	display: inline-block;
+	flex-wrap: nowrap;
+}
+.inline img {
+	display: block;
+	width: 200px;
+	height: 400px;
+	flex-wrap: nowrap;
+}
+
+td:nth-child(1) {
+	width: 20%;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+	width: 15%;
+}
+
+td:nth-child(4),
+td:nth-child(5),
+td:nth-child(6) {
+	width: 10%;
+}
+
+td:nth-child(7) {
+	width: 20%;
+}
+
+.m1{
+	list-style-type: none;
+	counter-reset:  item;
+	padding: 0;
+	margin: 0px 0px 0px -18px;
+}
+.m1 ::before{
+	content: counter(item) ') '; 
+	counter-increment: item;}
+
+	.m2{
+		counter-reset: item;
+		list-style: none;
+		padding: 0;
+		margin: 0px 0px 0px -19px;
+}
+.m2 ::before{
+		counter-increment: item;
+		content: counter(item, lower-alpha) ") ";}
+		
+.otst{
+			margin: 0px;
+			padding-left: 0px;
+		}
+
+.justb {
+	font-weight: bold;
+}
+
+.none {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-top: 5px;
+}
+
+.polosa::marker {
+	content: "-" counter(list-item, none);
+	counter-increment: list-item;
+}
+
+.polosa {
+	padding-left: 10px;
+	margin-left: 0px;
+	margin-top: 5px;
+}
