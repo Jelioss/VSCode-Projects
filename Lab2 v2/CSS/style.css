@@ -13,7 +13,7 @@ td {
 
 /* Первая ячейка: текст */
 .text-cell {
-	background: url("../resources/space.jpg") no-repeat center;
+	background: url("../IMG/space.jpg") no-repeat center;
 	background-origin: border-box;
 	background-size: cover;
 	color: white;
