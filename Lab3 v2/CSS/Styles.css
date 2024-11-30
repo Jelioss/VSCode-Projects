@@ -57,10 +57,10 @@ p + p {
 	margin-top: 25px;
 }
 
-/* Использование общего селектора соседей */
-/*.child-image ~ .child-image {
-	border: 4px dashed rgb(64, 209, 7);
-}
+/* Использование общего селектора соседей */ 
+.child-image ~ .child-image { 
+	border: 4px dashed rgb(209, 7, 7);
+	} *
 
 /* Использование псевдоклассов */
 #main-block > p:first-child {
