@@ -6,7 +6,6 @@ document.getElementById('button1').addEventListener('click', function () {
 						 p.style.color = 'red'; // Изменить цвет
 						 p.style.fontSize = '24px'; // Изменить размер
 			} else {
-						 // Постепенно становится невидимым
 						 p.style.opacity = '0'; // Переход CSS обрабатывает эффект
 			}
 	});
