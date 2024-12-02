@@ -1,0 +1,124 @@
+:root {
+	--primary-color: #2c3e50;
+	--secondary-color: #34495e;
+	--accent-color: #3498db;
+	--light-color: #ecf0f1;
+	--border-color: #bdc3c7;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.6;
+	background-color: #f5f6fa;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+header {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h1 {
+	color: var(--primary-color);
+	margin-bottom: 20px;
+}
+
+.controls {
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	margin-bottom: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.control-item {
+	flex: 1;
+	min-width: 200px;
+}
+
+.control-item label {
+	display: block;
+	margin-bottom: 5px;
+	color: var(--secondary-color);
+}
+
+select, button {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.radio-group .radio-buttons {
+	display: flex;
+	gap: 15px;
+}
+
+.btn {
+	background-color: var(--accent-color);
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.btn:hover {
+	background-color: #29b954;
+}
+
+.table-wrapper {
+	background-color: white;
+	max-height: 65vh;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	overflow: auto;
+	position: relative;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table td:first-child,
+table th:first-child {
+   min-width: 70px; 
+   text-align: left; 
+   font-weight: 500;
+   position: sticky; 
+   left: 0;
+   background-color: var(--light-color);
+   z-index: 1;
+}
+
+th, td {
+	padding: 12px;
+	text-align: right;
+	border: 1px solid var(--border-color);
+		padding: 12px 15px; /* Увеличиваем отступы внутри ячеек */
+		white-space: nowrap; /* Предотвращаем перенос текста */
+		text-overflow: ellipsis; /* Добавляем троеточие при переполнении */
+}
+
+th {
+	background-color: var(--light-color);
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+tr:nth-child(even) {
+	background-color: #f8f9fa;
+}
+
+tr:hover {
+	background-color: #f1f2f6;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Лабораторная работа 6</title>
+	<link rel="stylesheet" href="/Lab6/CSS/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Прайс-лист компании</h1>
+		</header>
+
+		<main>
+			<div class="controls">
+				<div class="control-item">
+					<label for="coefficientSelect">Коэффициент изменения:</label>
+					<select id="coefficientSelect">
+						<option value="1.05">5%</option>
+						<option value="1.10">10%</option>
+						<option value="1.15">15%</option>
+						<option value="1.20">20%</option>
+						<option value="1.25">25%</option>
+					</select>
+				</div>
+
+				<div class="control-item radio-group">
+					<label>Действие с ценой:</label>
+					<div class="radio-buttons">
+						<input type="radio" id="increase" name="priceAction" value="increase" checked>
+						<label for="increase">Увеличить</label>
+						<input type="radio" id="decrease" name="priceAction" value="decrease">
+						<label for="decrease">Уменьшить</label>
+					</div>
+				</div>
+
+				<div class="control-item">
+					<label for="dateSelect">Выберите дату:</label>
+					<select id="dateSelect"></select>
+				</div>
+
+				<button id="recalculateBtn" class="btn">Пересчитать цены</button>
+			</div>
+
+			<div class="table-wrapper">
+				<table id="priceTable"></table>
+			</div>
+		</main>
+	</div>
+	<script src="/Lab6/JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+/* Основной стиль для обеих страниц */
+body {
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f4f4;
+}
+
+header {
+	text-align: center;
+	background-color: #222;
+	color: #fff;
+	padding: 20px;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	padding: 20px;
+}
+
+/* Блоки */
+.block1, .block2, .block3 {
+	border-radius: 10px;
+	padding: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+.block1 {
+	background: radial-gradient(circle, #ff7b7b, #d70000);
+}
+
+.block2 {
+	background: radial-gradient(circle, #7bafff, #0044d7);
+	transform: skew(-10deg);
+}
+
+.block3 {
+	background: radial-gradient(circle, #7bff8b, #00d76a);
+}
+
+/* Для списка */
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+ul li {
+	margin: 10px 0;
+}
+
+/* Поле ввода */
+#text-input {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#text-input:focus {
+	color: #ff0000;
+	font-family: 'Comic Sans MS', cursive;
+}
