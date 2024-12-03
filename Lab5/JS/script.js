@@ -1,7 +1,31 @@
 // Меню
 const menu = document.getElementById("menu");
 const colors = ["red", "blue", "green", "yellow", "purple"]; // Цвета для выбора
-let modal = null;
+let modal = null; // Переменная для модального окна
+
+// Создать модальное окно
+function createModal() {
+   modal = document.createElement("div");
+   modal.classList.add("modal");
+
+   const content = document.createElement("p");
+   content.id = "modal-content";
+   modal.appendChild(content);
+
+   const closeButton = document.createElement("button");
+   closeButton.textContent = "Закрыть";
+   closeButton.onclick = closeModal;
+
+   modal.appendChild(closeButton);
+   document.body.appendChild(modal);
+}
+
+function closeModal() {
+   modal.classList.remove("active");
+   setTimeout(() => {
+      modal.style.display = "none"; // Скрытие окна после завершения анимации
+   }, 300); // время анимации
+}
 
 // Инициализация меню
 const menuItems = ["Главная", "О проекте", "Контакты"];
@@ -13,13 +37,21 @@ function addMenuItem(name, color = null) {
    link.textContent = name;
    link.href = "#";
    link.style.color = color || "white";
-   link.onclick = () => openWindow(name);
+   link.onclick = (e) => {
+      e.preventDefault();
+      openWindow(name);
+   };
    menu.appendChild(link);
 }
 
-// Открыть новое окно
+// Открыть модальное окно
 function openWindow(name) {
-   alert(`Вы выбрали: ${name}`);
+   const modalContent = document.getElementById("modal-content");
+   modalContent.textContent = `Вы выбрали: ${name}`;
+   modal.style.display = "block"; // Устанавливаем display для плавного появления
+   setTimeout(() => {
+      modal.classList.add("active");
+   }, 10); // Задержка для корректного срабатывания анимации
 }
 
 // Закрыть модальное окно
@@ -27,8 +59,10 @@ function closeModal() {
    modal.classList.remove("active");
 }
 
-// Кнопка добавления меню
+// Добавить модальное окно и кнопку добавления пунктов меню
 document.addEventListener("DOMContentLoaded", () => {
+   createModal(); // Создаем модальное окно при загрузке страницы
+
    const inputField = document.createElement("input");
    inputField.type = "text";
    inputField.placeholder = "Введите название пункта";
@@ -47,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = inputField.value.trim();
       const color = select.value;
       if (text) {
-            addMenuItem(text, color);
-            inputField.value = "";
+         addMenuItem(text, color);
+         inputField.value = "";
       } else {
-            alert("Введите название пункта.");
+         alert("Введите название пункта.");
       }
    };
 
