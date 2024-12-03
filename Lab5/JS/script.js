@@ -22,21 +22,6 @@ function openWindow(name) {
    alert(`Вы выбрали: ${name}`);
 }
 
-// Модальное окно
-function showModal(content) {
-   if (!modal) {
-      modal = document.createElement("div");
-      modal.className = "modal";
-      modal.innerHTML = `
-            <p>${content}</p>
-            <button onclick="closeModal()">Закрыть</button>
-      `;
-      document.body.appendChild(modal);
-   }
-   modal.querySelector("p").textContent = content;
-   modal.classList.add("active");
-}
-
 // Закрыть модальное окно
 function closeModal() {
    modal.classList.remove("active");
