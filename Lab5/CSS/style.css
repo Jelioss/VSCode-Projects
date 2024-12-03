@@ -1,4 +1,4 @@
-/* Основные стили */
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -14,14 +14,14 @@ header, nav, article, section, aside, footer {
 	margin: 10px;
 }
 
-/* Шапка */
+
 header {
 	background: linear-gradient(90deg, #0d1b3c, #1f3b64);
 	text-align: center;
 	color: #f0db4f;
 }
 
-/* Навигация */
+
 nav {
 	display: flex;
 	justify-content: space-around;
@@ -57,7 +57,7 @@ aside {
 	background-color: #1f2e48;
 }
 
-/* Футер */
+
 footer {
 	text-align: center;
 	background: linear-gradient(90deg, #1f3b64, #0d1b3c);
@@ -77,13 +77,13 @@ footer {
    border: 2px solid #f0db4f;
    z-index: 1000;
    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-   opacity: 0; /* Начальная прозрачность */
+   opacity: 0; 
    transition: opacity 0.3s ease, transform 0.3s ease; /* Добавление анимации */
 }
 
 .modal.active {
    display: block; /* Делает модальное окно видимым */
-   opacity: 1; /* Плавно появляется */
+   opacity: 1; 
    transform: translate(-50%, -50%) scale(1); /* Плавно увеличивается до нормального размера */
 }
 
