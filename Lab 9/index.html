@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Департаменты</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<!-- Форма для ввода данных -->
+		<div id="notifications" class="notifications"></div>
+		<form id="departmentForm">
+			<h2>Добавить департамент</h2>
+			<label for="number">Номер:</label>
+			<input type="text" id="number" name="number" placeholder="Введите номер департамента" required>
+
+			<label for="name">Название:</label>
+			<input type="text" id="name" name="name" placeholder="Введите название департамента" required>
+
+			<label for="manager">ФИО менеджера:</label>
+			<input type="text" id="manager" name="manager" placeholder="Введите ФИО менеджера" required>
+
+			<label for="phone">Телефон:</label>
+			<input type="text" id="phone" name="phone" placeholder="Введите телефон" required>
+
+			<label for="employees">Количество сотрудников:</label>
+			<input type="number" id="employees" name="employees" placeholder="Введите количество сотрудников" required>
+
+			<label for="address">Юр. адрес:</label>
+			<input type="text" id="address" name="address" placeholder="Введите юридический адрес" required>
+
+			<button type="submit">Ввести данные</button>
+			<button type="button" id="clearForm">Очистить форму</button>
+		</form>
+
+		<!-- Управление данными -->
+		<div class="controls">
+			<button id="deleteById">Удалить запись по ID</button>
+			<button id="showAll">Показать все данные</button>
+			<button id="showById">Показать элемент по ID</button>
+			<input type="text" id="idInput" placeholder="Введите ID">
+		</div>
+
+		<!-- Контейнер для вывода данных -->
+		<div id="output"></div>
+	</div>
+
+	<!-- Подключение скриптов -->
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/businessLogic.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
