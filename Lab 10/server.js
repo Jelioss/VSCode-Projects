@@ -27,7 +27,7 @@ const array = generateArray();
 saveArray(array);
 
 const server = http.createServer((req, res) => {
-	console.log('Запрос:', req.url);
+
 
 	if (req.url === '/data') {
 		const filePath = path.join(__dirname, 'resource', 'data.json');
