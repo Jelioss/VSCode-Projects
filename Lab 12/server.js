@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost/usbFlashDB', {
 	.catch(err => console.error('MongoDB connection error:', err));
 
 // Import Modules
-const addRecord = require('/modules/addRecord');
+const addRecord = require('./modules/addRecord');
 const deleteRecord = require('./modules/deleteRecord');
 const updateRecord = require('./modules/updateRecord');
 const getRecords = require('./modules/getRecords');

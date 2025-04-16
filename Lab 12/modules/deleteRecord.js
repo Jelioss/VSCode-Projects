@@ -1,4 +1,4 @@
-const FlashDrive = require('/models/FlashDrive');
+const FlashDrive = require('../models/flashDrive');
 
 module.exports = async (req, res) => {
 	try {
