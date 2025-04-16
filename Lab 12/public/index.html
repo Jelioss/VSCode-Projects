@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>USB Flash Drive Manager</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>USB Flash Drive Manager</h1>
+
+		<!-- Add Record Form -->
+		<h2>Add New Flash Drive</h2>
+		<form id="addForm">
+			<input type="text" id="manufacturer" placeholder="Manufacturer" required>
+			<input type="number" id="capacity" placeholder="Capacity (GB)" required>
+			<input type="number" id="warranty" placeholder="Warranty (Months)" required>
+			<input type="number" id="stock" placeholder="Stock Quantity" required>
+			<button type="submit">Add Flash Drive</button>
+		</form>
+
+		<!-- Get Records by Warranty -->
+		<h2>Find Flash Drives by Warranty</h2>
+		<input type="number" id="warrantyFilter" placeholder="Max Warranty (Months)">
+		<button onclick="getRecords()">Get Records</button>
+
+		<!-- Delete Records by Warranty -->
+		<h2>Delete Flash Drives by Warranty</h2>
+		<input type="number" id="warrantyDelete" placeholder="Max Warranty (Months)">
+		<button onclick="deleteByWarranty()">Delete Records</button>
+
+		<!-- Records Table -->
+		<h2>Flash Drive Records</h2>
+		<table id="recordsTable">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Manufacturer</th>
+					<th>Capacity (GB)</th>
+					<th>Warranty (Months)</th>
+					<th>Stock</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody id="recordsBody"></tbody>
+		</table>
+
+		<!-- Update Modal -->
+		<div id="updateModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Update Flash Drive</h2>
+				<form id="updateForm">
+					<input type="hidden" id="updateId">
+					<input type="text" id="updateManufacturer" placeholder="Manufacturer" required>
+					<input type="number" id="updateCapacity" placeholder="Capacity (GB)" required>
+					<input type="number" id="updateWarranty" placeholder="Warranty (Months)" required>
+					<input type="number" id="updateStock" placeholder="Stock Quantity" required>
+					<button type="submit">Update</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
