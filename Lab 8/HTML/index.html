@@ -12,20 +12,17 @@
 	<div class="container">
 		<!-- Заголовок -->
 		<h1>Слайдер рекламных картинок</h1>
-
 		<!-- Панель управления -->
 		<div class="controls">
+			<label for="startDelayInput">Начальная задержка (сек):</label>
+			<input type="number" id="startDelayInput" value="5" min="1">
 			<label for="delayInput">Задержка между слайдами (сек):</label>
 			<input type="number" id="delayInput" value="3" min="1">
 			<button id="startButton">Начать/Возобновить</button>
 			<button id="stopButton">Остановить</button>
 		</div>
-
 		<!-- Слайдер -->
 		<div class="slider" id="slider"></div>
-
-		<!-- Сообщение об окончании -->
-		<div id="endMessage" class="hidden">Показ слайдера завершен!</div>
 	</div>
 
 	<script src="../JS/script.js"></script>

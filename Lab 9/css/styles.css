@@ -1,0 +1,172 @@
+/* Общий стиль страницы */
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(135deg, #6a11cb, #2575fc); /* Градиентный фон */
+	color: #fff;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+:root {
+	--success-color: #4caf50; /* Мягкий зелёный */
+	--error-color: #f44336; /* Мягкий красный */
+	--info-color: #2196f3; /* Мягкий синий */
+	--neutral-color: #ffffff; /* Белый для текста */
+ }
+
+ .container {
+	background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	width: 100%;
+	max-width: 800px;
+	margin: 20px auto;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 24px;
+	color: #fff;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+input, button {
+	padding: 10px;
+	margin-top: 5px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+input {
+	background: rgba(250, 236, 236, 0.2);
+	color: #fff;
+}
+
+button {
+	background: #4CAF50; /* Зелёная кнопка */
+	color: white;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+button {
+	background: var(--info-color); /* Мягкий синий */
+	color: var(--neutral-color);
+	cursor: pointer;
+	transition: background 0.3s ease;
+ }
+ 
+ button:hover {
+	background: #186fb6; /* Темнее при наведении */
+ }
+ 
+ button#deleteById {
+	background: #f44936; 
+ }
+ 
+ button#showById{
+	background: #f47f36;
+ }
+
+ button#deleteById:hover {
+	background: #b23426;
+ }
+ 
+ button#showById:hover{
+	background: #be6229;
+
+ }
+
+ button#showAll {
+	background: var(--success-color); /* Мягкий зелёный */
+ }
+ 
+ button#showAll:hover {
+	background: #3c8a3f;
+ }
+
+ input {
+	background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+	color: var(--neutral-color);
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+ }
+ 
+ input::placeholder {
+	color: rgba(255, 255, 255, 0.6); /* Цвет плейсхолдера */
+ }
+
+.controls {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+.department {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 15px;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.department h3 {
+	margin: 0 0 10px;
+	color: #ffeb3b; /* Жёлтый заголовок */
+}
+ /* Стиль для блока уведомлений */
+.notifications {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+}
+
+ /* Стиль для одного уведомления */
+.notification {
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification.success {
+	background: #4caf50; /* Зелёный цвет для успеха */
+}
+
+.notification.error {
+	background: #f44336; /* Красный цвет для ошибок */
+}
+
+.notification button {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 10px;
+}
