@@ -1,12 +1,13 @@
 const FlashDrive = require('../models/flashDrive');
 
-module.exports = async (req, res) => {
+const addRecord = async (req, res) => {
 	try {
-		const { manufacturer, capacity, warranty, stock } = req.body;
-		const newFlash = new FlashDrive({ manufacturer, capacity, warranty, stock });
-		await newFlash.save();
-		res.status(201).json({ message: 'Record added successfully', data: newFlash });
+		const flashDrive = new FlashDrive(req.body);
+		await flashDrive.save();
+		res.status(201).send(flashDrive);
 	} catch (error) {
-		res.status(500).json({ error: 'Failed to add record' });
+		res.status(400).send(error);
 	}
 };
+
+module.exports = addRecord;
