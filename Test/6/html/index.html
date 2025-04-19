@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Конвертер валют</title>
+	<link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Конвертер валют</h1>
+		</header>
+
+		<div id="rates"></div>
+
+		<div class="converter">
+			<input type="number" id="amount" placeholder="Введите сумму" />
+			<select id="fromCurrency"></select>
+			<select id="toCurrency"></select>
+			<input type="text" id="result" placeholder="Результат" readonly />
+
+			<div class="buttons">
+				<button id="loadRates">Загрузить курсы</button>
+				<button id="loadInfo">Загрузить инфо</button>
+				<button id="convert">Рассчитать</button>
+			</div>
+		</div>
+
+		<div id="info"></div>
+		<div id="status"></div>
+
+
+	</div>
+
+	<script src="../js/script.js"></script>
+</body>
+
+</html>
