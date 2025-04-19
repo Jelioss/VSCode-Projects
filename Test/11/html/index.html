@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Менеджер XML-форм</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Менеджер XML-форм</h1>
+
+		<!-- Уведомление -->
+		<div id="notification" class="notification hidden"></div>
+
+		<!-- Форма ввода -->
+		<h2>Форма ввода</h2>
+		<form id="inputForm">
+			<label for="textAreaInput">Текстовая область:</label><br>
+			<textarea id="textAreaInput" placeholder="Введите текст" required></textarea><br>
+
+			<label for="dataListInput">Выберите вариант:</label><br>
+			<input list="options" id="dataListInput" placeholder="Выберите вариант" required>
+			<datalist id="options">
+				<option value="Вариант 1"></option>
+				<option value="Вариант 2"></option>
+				<option value="Вариант 3"></option>
+			</datalist><br>
+
+			<label for="emailInput">Электронная почта:</label><br>
+			<input type="email" id="emailInput" placeholder="Введите email" required><br>
+
+			<label><input type="checkbox" id="checkbox1Input"> Чекбокс 1</label><br>
+			<label><input type="checkbox" id="checkbox2Input"> Чекбокс 2</label><br>
+
+			<button type="submit">Сохранить в XML</button>
+		</form>
+
+		<!-- Форма отображения -->
+		<h2>Форма отображения (только чтение)</h2>
+		<form id="displayForm">
+			<label for="textAreaDisplay">Текстовая область:</label><br>
+			<textarea id="textAreaDisplay" disabled></textarea><br>
+
+			<label for="dataListDisplay">Выбранный вариант:</label><br>
+			<input list="optionsDisplay" id="dataListDisplay" disabled>
+			<datalist id="optionsDisplay">
+				<option value="Вариант 1"></option>
+				<option value="Вариант 2"></option>
+				<option value="Вариант 3"></option>
+			</datalist><br>
+
+			<label for="emailDisplay">Электронная почта:</label><br>
+			<input type="email" id="emailDisplay" disabled><br>
+
+			<label><input type="checkbox" id="checkbox1Display" disabled> Чекбокс 1</label><br>
+			<label><input type="checkbox" id="checkbox2Display" disabled> Чекбокс 2</label><br>
+		</form>
+
+		<!-- Кнопка для чтения из XML -->
+		<button id="loadButton">Загрузить из XML</button>
+	</div>
+</body>
+
+</html>
