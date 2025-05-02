@@ -1,13 +1,18 @@
 {
-	"name": "usb-flash-project",
-	"version": "1.0.0",
-	"description": "Node.js app for managing USB flash drive data with MongoDB",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"dependencies": {
-		"express": "^4.18.2",
-		"mongoose": "^7.0.0"
-	}
+  "name": "lab-5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.1"
+  }
 }
