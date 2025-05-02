@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Компании</title>
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+	<div class="app-container">
+		<header class="header">
+			<h1>Управление компаниями</h1>
+		</header>
+
+		<section class="card-form">
+			<form action="/api/add" method="POST">
+				<div class="form-group">
+					<label for="name">Название:</label>
+					<input type="text" id="name" name="name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="isProduction">Производственная:</label>
+					<select id="isProduction" name="isProduction" required>
+						<option value="true">Да</option>
+						<option value="false">Нет</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="employees">Число сотрудников:</label>
+					<input type="number" id="employees" name="employees" required>
+				</div>
+
+				<div class="form-group">
+					<label for="averageSalary">Средняя зарплата:</label>
+					<input type="number" id="averageSalary" name="averageSalary" step="0.01" required>
+				</div>
+
+				<button type="submit">Добавить</button>
+			</form>
+		</section>
+
+		<section class="actions">
+			<form action="/api/delete-by-employees" method="POST" class="delete-form">
+				<label for="employeeCount">Удалить компании с числом сотрудников меньше:</label>
+				<input type="number" id="employeeCount" name="employeeCount" required>
+				<button type="submit">Удалить</button>
+			</form>
+
+			<form id="filterForm" class="filter-form">
+				<label for="employeeFilter">Показать компании с числом сотрудников меньше:</label>
+				<input type="number" id="employeeFilter" required>
+				<button type="submit">Фильтровать</button>
+			</form>
+		</section>
+
+		<section class="results" id="result"></section>
+	</div>
+
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

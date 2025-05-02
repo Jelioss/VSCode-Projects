@@ -1,0 +1,193 @@
+/* styles.css */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #6a89cc, #b8c6e5);
+	color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+.app-container {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 16px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	flex-wrap: wrap;
+}
+
+.left-side {
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.right-side {
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.header h1 {
+	color: #ffffff; /* fallback */
+	font-size: 2rem;
+	letter-spacing: 1px;
+	background: linear-gradient(to right, #2980b9, #6dd5fa);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.card-form form,
+.actions form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	background: linear-gradient(to right, #6a89cc, #b8c6e5);
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+label {
+	font-weight: 600;
+	color: #ffffff;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+	padding: 10px;
+	border: none;
+	border-radius: 6px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+	padding: 12px;
+	background: linear-gradient(to right, #6a89cc, #b8c6e5);
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+button:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 10px rgba(0, 174, 255, 0.6);
+}
+
+.delete-form {
+	background: linear-gradient(to right, #e74c3c, #f1c40f);
+	color: #ffffff;
+}
+
+.delete-form label,
+.delete-form input,
+.delete-form button {
+	color: #ffffff !important;
+}
+
+.filter-form {
+	background: linear-gradient(to right, #6a89cc, #b8c6e5);
+	color: #ffffff;
+}
+
+.results {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.results ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.results li {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	border-left: 4px solid #6a89cc;
+}
+
+/* Для вывода результатов справа */
+.right-side {
+	max-height: 80vh;
+	overflow-y: auto;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+}
+
+.right-side .results {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.right-side .results li {
+	border-left: 4px solid #6a89cc;
+}
+
+/* Для расположения блоков по центру */
+.app-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.left-side,
+.right-side {
+	flex: 1;
+	max-width: 500px;
+}
+
+/* Сделаем более плавный переход в градиенте */
+body {
+	background: linear-gradient(135deg, #6a89cc, #b8c6e5, #ffffff);
+}
