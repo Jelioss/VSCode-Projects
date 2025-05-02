@@ -4,44 +4,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>USB Flash Drives</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-	<h1>Управление каталогом USB флешек</h1>
+	<div class="container">
+		<h1>Управление каталогом USB флешек</h1>
 
-	<form action="/api/add" method="POST">
-		<label>Производитель:</label><br>
-		<input type="text" name="manufacturer" required><br>
-		<label>Объем (Гб):</label><br>
-		<input type="number" name="capacity" required><br>
-		<label>Гарантия (мес.):</label><br>
-		<input type="number" name="warrantyPeriod" required><br>
-		<label>Количество на складе:</label><br>
-		<input type="number" name="stock" required><br>
-		<button type="submit">Добавить</button>
-	</form>
+		<!-- Форма добавления -->
+		<form action="/api/add" method="POST">
+			<label>Производитель:</label>
+			<input type="text" name="manufacturer" required>
 
-	<hr>
+			<label>Объем (Гб):</label>
+			<input type="number" name="capacity" required>
 
-	<form action="/api/delete-by-warranty" method="POST">
-		<label>Удалить все товары со сроком гарантии меньше:</label><br>
-		<input type="number" name="warranty" required><br>
-		<button type="submit">Удалить</button>
-	</form>
+			<label>Гарантия (мес.):</label>
+			<input type="number" name="warrantyPeriod" required>
 
-	<hr>
+			<label>Количество на складе:</label>
+			<input type="number" name="stock" required>
 
-	<form id="filterForm">
-		<label for="warrantyInput">Показать производителей со сроком гарантии меньше:</label><br>
-		<input type="number" id="warrantyInput" required><br>
-		<button type="submit">Фильтровать</button>
-	</form>
+			<button type="submit">Добавить</button>
+		</form>
 
-	<div id="result"></div>
+		<hr>
 
+		<!-- Форма удаления -->
+		<form action="/api/delete-by-warranty" method="POST">
+			<label>Удалить все товары со сроком гарантии меньше:</label>
+			<input type="number" name="warranty" required>
+			<button type="submit">Удалить</button>
+		</form>
 
+		<hr>
+
+		<!-- Форма фильтрации -->
+		<form id="filterForm">
+			<label>Показать производителей со сроком гарантии меньше:</label>
+			<input type="number" id="warrantyInput" required>
+			<button type="submit">Фильтровать</button>
+		</form>
+
+		<div id="result"></div>
+	</div>
+
+	<script src="/js/main.js"></script>
 </body>
 
 </html>
