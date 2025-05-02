@@ -14,7 +14,6 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/flashdrives
 
 // Модель
 const FlashDrive = require('./models/FlashDrive');
-
 const app = express();
 
 // Middleware для статики (для загрузки файлов из папки public)
