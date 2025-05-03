@@ -1,0 +1,17 @@
+{
+	"name": "frontend-lab",
+	"version": "1.0.0",
+	"description": "Лабораторная работа Node.js и fs",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {},
+	"engines": {
+		"node": ">=22.14.0"
+	}
+}
