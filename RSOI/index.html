@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>XML DOM Lab</title>
+	<script type="text/javascript" src="loadxmldoc.js"></script>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 50%;
+			margin: 20px 0;
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+			padding: 8px;
+			text-align: left;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Экзаменационная ведомость</h2>
+	<div id="tableOutput"></div>
+
+	<script type="text/javascript">
+		// Загружаем XML-документ
+		const xmlDoc = loadXMLDoc("gradeReport.xml");
+
+		if (xmlDoc && xmlDoc.documentElement) {
+			// Задание 1: Формируем таблицу
+			let gradeRecords = xmlDoc.getElementsByTagName("gradeRecord");
+			let table = "<table><tr><th>Номер</th><th>Студент</th><th>Оценка</th></tr>";
+
+			// Функция для преобразования числовых оценок в словесные
+			function convertGrade(grade) {
+				switch (grade) {
+					case "5": return "Отлично";
+					case "4": return "Хорошо";
+					case "3": return "Удвл.";
+					default: return grade;
+				}
+			}
+
+			// Обходим все записи gradeRecord
+			for (let i = 0; i < gradeRecords.length; i++) {
+				let id = gradeRecords[i].getAttribute("id");
+				let student = gradeRecords[i].getElementsByTagName("student")[0].childNodes[0].nodeValue;
+				let grade = gradeRecords[i].getElementsByTagName("grade")[0].childNodes[0].nodeValue;
+
+				// Задание 2: Заменяем числовую оценку на словесную
+				let wordGrade = convertGrade(grade);
+				gradeRecords[i].getElementsByTagName("grade")[0].childNodes[0].nodeValue = wordGrade;
+
+				// Добавляем строку в таблицу
+				table += `<tr><td>${id}</td><td>${student}</td><td>${wordGrade}</td></tr>`;
+			}
+
+			table += "</table>";
+
+			// Выводим таблицу на страницу
+			document.getElementById("tableOutput").innerHTML = table;
+
+		}
+	</script>
+</body>
+
+</html>
