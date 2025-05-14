@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const notification = document.createElement('div');
 		notification.classList.add('notification', type);
 		notification.innerHTML = `
-		  <span>${message}</span>
-		  <button>&times;</button>
+		<span>${message}</span>
+		<button>&times;</button>
 		`;
 
 		// Добавляем уведомление на страницу
