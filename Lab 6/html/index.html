@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Асинхронная загрузка данных</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Лабораторная работа: Асинхронная загрузка данных</h1>
+	</header>
+
+	<main>
+		<button id="loadData1">Загрузить данные 1</button>
+		<button id="loadData2">Загрузить данные 2</button>
+		<table id="dataTable">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Название</th>
+					<th>Значение</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody"></tbody>
+		</table>
+	</main>
+
+	<footer>
+		<p>Лабораторная работа 6</p>
+	</footer>
+
+	<script>
+		// Получение элементов
+		const loadData1Btn = document.getElementById('loadData1');
+		const loadData2Btn = document.getElementById('loadData2');
+		const tableBody = document.getElementById('tableBody');
+
+		// Функция для очистки таблицы
+		function clearTable() {
+			tableBody.innerHTML = '';
+		}
+
+		// Функция для заполнения таблицы
+		function populateTable(data) {
+			data.forEach(item => {
+				const row = document.createElement('tr');
+				row.innerHTML = `
+                  <td>${item.id}</td>
+                  <td>${item.name}</td>
+                  <td>${item.value}</td>
+               `;
+				tableBody.appendChild(row);
+			});
+		}
+
+		// Асинхронная функция для загрузки данных
+		async function loadData(url) {
+			try {
+				const response = await fetch(url);
+				if (!response.ok) throw new Error('Ошибка сети');
+				const data = await response.json();
+				clearTable();
+				populateTable(data);
+			} catch (error) {
+				console.error('Ошибка загрузки данных:', error);
+				tableBody.innerHTML = '<tr><td colspan="3">Ошибка загрузки данных</td></tr>';
+			}
+		}
+
+		// Обработчики событий для кнопок
+		loadData1Btn.addEventListener('click', () => loadData('/api/data1'));
+		loadData2Btn.addEventListener('click', () => loadData('/api/data2'));
+	</script>
+</body>
+
+</html>
