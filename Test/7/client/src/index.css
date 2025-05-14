@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #d4e157, #e8f5e9); /* Тот же градиент, что у .app */
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh; /* Убедимся, что корневой элемент растягивается */
+}
